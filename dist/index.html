@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#173f35">
+  <meta name="description" content="龙华周六读书会｜君子爱财，取之有道。11月21日15:00，在星巴克龙华益田假日天地店，一起聊聊财富、道义与人生。">
+  <meta property="og:title" content="君子爱财，取之有道｜龙华周六读书会">
+  <meta property="og:description" content="11月21日 15:00–16:00｜龙华益田假日天地｜4–8人小组交流">
+  <meta property="og:image" content="assets/cover-note.jpg">
+  <title>君子爱财，取之有道｜龙华周六读书会</title>
+  <style>
+    :root{--ink:#1d2924;--muted:#68736d;--paper:#f5f0e4;--cream:#fffaf0;--green:#173f35;--lime:#d6ed72;--yellow:#f8d744;--line:rgba(23,63,53,.14);--shadow:0 24px 70px rgba(30,54,44,.14)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    button,a{font:inherit}
+    a{color:inherit}
+    .grain{position:fixed;inset:0;pointer-events:none;opacity:.09;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E")}
+    .wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+    .topbar{height:68px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em}
+    .brand-dot{width:14px;height:14px;border-radius:50%;background:var(--yellow);box-shadow:10px 0 0 var(--green)}
+    .share{border:1px solid var(--line);border-radius:999px;background:rgba(255,250,240,.7);padding:9px 16px;color:var(--green);cursor:pointer}
+    .hero{min-height:calc(100svh - 68px);display:grid;grid-template-columns:1.02fr .78fr;gap:clamp(42px,7vw,96px);align-items:center;padding:38px 0 88px;position:relative}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);font-weight:800;letter-spacing:.12em;font-size:14px;text-transform:uppercase}
+    .eyebrow:before{content:"";width:42px;height:2px;background:var(--yellow)}
+    h1{font-family:STKaiti,KaiTi,"楷体",serif;font-size:clamp(54px,7.2vw,104px);line-height:.98;margin:25px 0 26px;font-weight:900;letter-spacing:-.05em;color:var(--green)}
+    h1 em{font-style:normal;color:#c49113;display:block;margin-top:.14em}
+    .lead{font-size:clamp(18px,2vw,24px);max-width:620px;margin:0 0 32px;color:#45514b}
+    .event-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;max-width:680px}
+    .event-strip div{background:rgba(255,250,240,.76);padding:16px 18px}
+    .event-strip small{display:block;color:var(--muted);font-size:12px;letter-spacing:.08em;margin-bottom:2px}
+    .event-strip strong{display:block;font-size:16px;line-height:1.35}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{border:0;border-radius:999px;padding:14px 24px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;font-weight:800;transition:.2s transform,.2s box-shadow}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--green);color:white;box-shadow:0 12px 30px rgba(23,63,53,.2)}
+    .btn-secondary{background:transparent;border:1px solid var(--green);color:var(--green)}
+    .poster{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);transform:rotate(1.2deg);background:#c5b395}
+    .poster img,.photo-crop img,.qr-crop img{position:absolute;width:100%;height:auto;left:0;top:0}
+    .poster img{transform:translateY(-17.8%)}
+    .poster:after{content:"11.21 · 深圳龙华";position:absolute;right:18px;bottom:18px;background:var(--lime);color:var(--green);font-weight:900;padding:8px 14px;border-radius:999px;transform:rotate(-2deg)}
+    section{padding:100px 0}
+    .section-head{display:grid;grid-template-columns:.62fr 1.38fr;gap:50px;align-items:start;margin-bottom:48px}
+    .kicker{font-size:14px;font-weight:900;color:#9a7317;letter-spacing:.16em;text-transform:uppercase;margin:0 0 10px}
+    h2{font-family:STKaiti,KaiTi,"楷体",serif;font-size:clamp(38px,5vw,68px);line-height:1.08;color:var(--green);margin:0}
+    .section-intro{font-size:clamp(18px,2vw,24px);margin:14px 0 0;color:#47534d;max-width:720px}
+    .question-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .question{min-height:230px;padding:24px;border:1px solid var(--line);border-radius:22px;background:rgba(255,250,240,.72);display:flex;flex-direction:column;justify-content:space-between;transition:.2s transform,.2s background}
+    .question:hover{transform:translateY(-5px);background:var(--cream)}
+    .question .n{font-family:Georgia,serif;color:#b59235;font-size:15px}
+    .question h3{font-size:21px;line-height:1.5;margin:24px 0 0}
+    .question:nth-child(2){background:var(--green);color:white}.question:nth-child(4){background:var(--yellow)}
+    .format{background:var(--green);color:white;position:relative;overflow:hidden}
+    .format:before{content:"道";position:absolute;right:-.08em;top:-.25em;font:700 48vw/1 STKaiti,KaiTi,serif;color:rgba(255,255,255,.035)}
+    .format h2{color:white}.format .section-intro{color:#d7e1dc}
+    .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
+    .step{border-top:1px solid rgba(255,255,255,.27);padding:24px 6px 0}
+    .step span{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:var(--lime);color:var(--green);font-weight:900}
+    .step h3{font-size:24px;margin:18px 0 8px}.step p{color:#cad7d2;margin:0}
+    .fit-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+    .fit-list{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:14px}
+    .fit-list li{padding:15px 18px 15px 52px;background:var(--cream);border-radius:14px;position:relative;border:1px solid var(--line)}
+    .fit-list li:before{content:"✓";position:absolute;left:18px;color:#237455;font-weight:900}
+    .photo-stack{display:grid;grid-template-columns:1fr 1fr;gap:16px;transform:rotate(-1deg)}
+    .photo-crop{position:relative;overflow:hidden;border:10px solid var(--cream);box-shadow:var(--shadow);aspect-ratio:4/5;background:#a8886d}
+    .photo-crop.discussion img{transform:translateY(-46%)}
+    .photo-crop.group{margin-top:46px}.photo-crop.group img{transform:translateY(-14%)}
+    .details{background:var(--cream)}
+    .detail-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:start}
+    .detail-list{border-top:1px solid var(--line);margin-top:34px}
+    .detail-row{display:grid;grid-template-columns:100px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+    .detail-row dt{color:var(--muted)}.detail-row dd{margin:0;font-weight:800;font-size:18px}
+    .detail-row a{color:#176d50;text-underline-offset:4px}
+    .signup-card{background:var(--paper);padding:22px;border-radius:28px;position:sticky;top:24px;border:1px solid var(--line)}
+    .signup-card h3{font-size:28px;margin:0 0 6px}.signup-card p{margin:0 0 20px;color:var(--muted)}
+    .qr-crop{position:relative;overflow:hidden;aspect-ratio:3/4;border-radius:18px;background:white}.qr-crop img{transform:translateY(-10%)}
+    .copy-box{margin-top:16px;background:white;border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px dashed #9ca89f}
+    .copy-box code{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#51615a}
+    .mini{border:0;background:var(--green);color:white;border-radius:999px;padding:8px 13px;white-space:nowrap;cursor:pointer}
+    footer{background:#102e27;color:#b8c8c1;padding:46px 0 110px;text-align:center}
+    footer strong{color:white}
+    .sticky{display:none}
+    .toast{position:fixed;left:50%;bottom:95px;transform:translate(-50%,20px);opacity:0;background:#102e27;color:white;padding:11px 18px;border-radius:999px;z-index:50;transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:22px}.poster{width:min(520px,100%);margin:auto}.question-grid{grid-template-columns:repeat(2,1fr)}.question:last-child{grid-column:1/-1;min-height:160px}.section-head,.fit-grid,.detail-layout{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.detail-layout{gap:36px}.signup-card{position:static}.section-head{gap:18px}.fit-grid{gap:46px}}
+    @media(max-width:620px){.wrap{width:min(100% - 28px,1120px)}.topbar{height:58px}.brand{font-size:14px}.share{padding:7px 13px}.hero{min-height:auto;padding-bottom:64px;gap:40px}h1{font-size:54px}.lead{font-size:18px}.event-strip{grid-template-columns:1fr}.event-strip div{display:grid;grid-template-columns:76px 1fr;align-items:center}.event-strip small{margin:0}.actions{display:grid;grid-template-columns:1fr 1fr}.btn{padding:13px 16px}.poster{border-radius:20px}section{padding:72px 0}.section-head{margin-bottom:32px}.question-grid{grid-template-columns:1fr}.question,.question:last-child{min-height:170px;grid-column:auto}.flow{gap:26px}.photo-stack{gap:8px}.photo-crop{border-width:6px}.detail-row{grid-template-columns:74px 1fr;gap:10px}.signup-card{padding:14px}.sticky{display:grid;grid-template-columns:1fr auto;gap:10px;position:fixed;z-index:30;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));background:rgba(255,250,240,.94);backdrop-filter:blur(14px);padding:9px;border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 40px rgba(20,42,34,.2);align-items:center}.sticky div{padding-left:7px;line-height:1.25}.sticky small{color:var(--muted);display:block}.sticky strong{font-size:15px}.sticky .btn{padding:11px 17px}footer{padding-bottom:130px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.question,.toast{transition:none}}
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="wrap topbar">
+    <div class="brand"><span class="brand-dot"></span>龙华周六读书会</div>
+    <button class="share" id="shareBtn" type="button">分享活动</button>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">周六 · 主题读书会</div>
+        <h1>君子爱财<em>取之有道</em></h1>
+        <p class="lead">从古人的智慧出发，聊聊财富、道义与人生选择。不是投资课，也不需要提前阅读——带着问题来，就好。</p>
+        <div class="event-strip" aria-label="活动概览">
+          <div><small>时间</small><strong>11.21 周六<br>15:00–16:00</strong></div>
+          <div><small>地点</small><strong>龙华益田<br>假日天地</strong></div>
+          <div><small>席位</small><strong>4–8 人<br>¥29.9 / 人</strong></div>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="#signup">查看报名方式 ↓</a>
+          <button class="btn btn-secondary" id="calendarBtn" type="button">加入日历</button>
+        </div>
+      </div>
+      <figure class="poster" aria-label="活动主题海报">
+        <img src="assets/cover-note.jpg" alt="君子爱财，取之有道活动海报" width="1080" height="2400">
+      </figure>
+    </div>
+
+    <section id="topics">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="kicker">What we talk about</p><h2>这一小时，<br>聊什么？</h2></div>
+          <p class="section-intro">钱能带来自由，也可能成为束缚。我们不急着给答案，而是借古人的眼光，重新看见自己与财富的关系。</p>
+        </div>
+        <div class="question-grid">
+          <article class="question"><span class="n">01 · 财富</span><h3>人为什么渴望金钱？财富真的能带来幸福吗？</h3></article>
+          <article class="question"><span class="n">02 · 道义</span><h3>古人所说的“取之有道”，究竟指什么？</h3></article>
+          <article class="question"><span class="n">03 · 人性</span><h3>当利益与原则冲突，我们会如何选择？</h3></article>
+          <article class="question"><span class="n">04 · 智慧</span><h3>为什么有人拥有很多，却依然焦虑与不满足？</h3></article>
+          <article class="question"><span class="n">05 · 人生</span><h3>金钱是人生目标，还是实现价值的工具？</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="format">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="kicker">How it works</p><h2>不是讲座，<br>是一场共谈。</h2></div>
+          <p class="section-intro">主讲人从经典、历史故事与生活案例切入，留出足够的空间，让每个人都能说出自己的观察。</p>
+        </div>
+        <div class="flow">
+          <article class="step"><span>1</span><h3>主题引入</h3><p>从“君子爱财，取之有道”展开，建立共同语境。</p></article>
+          <article class="step"><span>2</span><h3>案例共读</h3><p>把传统智慧放回真实生活，看看它如何回应当下。</p></article>
+          <article class="step"><span>3</span><h3>自由交流</h3><p>分享观点、提出问题，在不同答案里照见自己。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap fit-grid">
+        <div>
+          <p class="kicker">Come as you are</p>
+          <h2>也许，<br>你会喜欢这里。</h2>
+          <ul class="fit-list">
+            <li>对传统文化、国学智慧感兴趣</li>
+            <li>喜欢思考财富与人生的关系</li>
+            <li>好奇古人如何看待金钱与道义</li>
+            <li>乐于阅读、思考和探索不同观点</li>
+            <li>想在周末认识一些有趣、爱思考的朋友</li>
+          </ul>
+        </div>
+        <div class="photo-stack" aria-label="往期活动照片">
+          <div class="photo-crop discussion"><img src="assets/discussion.jpg" alt="往期读书会交流现场" width="1080" height="2400" loading="lazy"></div>
+          <div class="photo-crop group"><img src="assets/group.jpg" alt="往期活动参与者合影" width="1080" height="2400" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="details" id="signup">
+      <div class="wrap detail-layout">
+        <div>
+          <p class="kicker">Event details</p>
+          <h2>留一个小时，<br>和有趣的灵魂碰个面。</h2>
+          <dl class="detail-list">
+            <div class="detail-row"><dt>时间</dt><dd>2026 年 11 月 21 日（周六）<br>15:00–16:00</dd></div>
+            <div class="detail-row"><dt>地点</dt><dd>星巴克（龙华益田假日天地店）<br><a href="https://map.baidu.com/search/%E6%98%9F%E5%B7%B4%E5%85%8B%20%E9%BE%99%E5%8D%8E%E7%9B%8A%E7%94%B0%E5%81%87%E6%97%A5%E5%A4%A9%E5%9C%B0%E5%BA%97" target="_blank" rel="noopener">在百度地图中搜索 →</a></dd></div>
+            <div class="detail-row"><dt>人数</dt><dd>4–8 人小组</dd></div>
+            <div class="detail-row"><dt>费用</dt><dd>29.9 元 / 人（防鸽费）</dd></div>
+            <div class="detail-row"><dt>准备</dt><dd>无需提前阅读，没有专业门槛</dd></div>
+          </dl>
+        </div>
+        <aside class="signup-card">
+          <h3>报名与咨询</h3>
+          <p>长按或截图识别二维码，添加主理人“秋”；也可以复制口令，在微信中打开取伙小程序报名。</p>
+          <div class="qr-crop"><img src="assets/wechat-qr.jpg" alt="活动主理人秋的微信二维码" width="1080" height="2400" loading="lazy"></div>
+          <div class="copy-box"><code id="miniPath">#小程序://取伙/1ZRiAKLWFeHUfzJ</code><button class="mini" id="copyBtn" type="button">复制口令</button></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><strong>龙华周六读书会</strong><br>在阅读与交流中，发现不一样的世界。</div></footer>
+  <div class="sticky"><div><small>11.21 周六 · 龙华</small><strong>15:00–16:00 · 仅 4–8 席</strong></div><a class="btn btn-primary" href="#signup">立即报名</a></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    const toast=(message)=>{const el=document.getElementById('toast');el.textContent=message;el.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove('show'),1800)};
+    const copyText=async(text)=>{try{await navigator.clipboard.writeText(text);toast('已复制，在微信中粘贴即可')}catch{const area=document.createElement('textarea');area.value=text;document.body.appendChild(area);area.select();document.execCommand('copy');area.remove();toast('已复制，在微信中粘贴即可')}};
+    document.getElementById('copyBtn').addEventListener('click',()=>copyText(document.getElementById('miniPath').textContent));
+    document.getElementById('shareBtn').addEventListener('click',async()=>{const data={title:document.title,text:'君子爱财，取之有道｜龙华周六读书会',url:location.href};if(navigator.share){try{await navigator.share(data)}catch(e){if(e.name!=='AbortError')copyText(location.href)}}else copyText(location.href)});
+    document.getElementById('calendarBtn').addEventListener('click',()=>{const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Longhua Reading Club//CN','BEGIN:VEVENT','UID:longhua-reading-20261121@reading.club','DTSTAMP:20261117T120000Z','DTSTART:20261121T070000Z','DTEND:20261121T080000Z','SUMMARY:龙华读书会｜君子爱财，取之有道','LOCATION:星巴克（龙华益田假日天地店）','DESCRIPTION:4–8人主题读书会，费用29.9元/人。无需提前阅读。','END:VEVENT','END:VCALENDAR'].join('\r\n');const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='龙华读书会-2026-11-21.ics';a.click();URL.revokeObjectURL(a.href);toast('日历文件已生成')});
+  </script>
+</body>
+</html>
+
