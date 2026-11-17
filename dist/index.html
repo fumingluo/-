@@ -164,7 +164,15 @@
     document.querySelectorAll('.signupTrigger').forEach(btn=>btn.addEventListener('click',openSignup));
     document.getElementById('qrOpen').addEventListener('click',openSignup);document.getElementById('qrButton').addEventListener('click',openSignup);document.getElementById('modalClose').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal()});
     document.getElementById('copyBtn').addEventListener('click',()=>copyText(MINI_PATH));document.getElementById('miniCopy').addEventListener('click',()=>copyText(MINI_PATH));
-    document.getElementById('shareBtn').addEventListener('click',async()=>{const data={title:document.title,text:'君子爱财，取之有道｜龙华周六读书会',url:location.href.split('#')[0]};if(navigator.share){try{await navigator.share(data)}catch(e){if(e.name!=='AbortError')copyText(data.url,'活动链接已复制')}}else copyText(data.url,'活动链接已复制')});
+    document.getElementById('shareBtn').addEventListener('click',async()=>{
+      const url='https://fumingluo.github.io/-/';
+      const inWeChat=/MicroMessenger/i.test(navigator.userAgent);
+      // 微信内置浏览器的系统分享面板可能无法将内容交付给联系人。
+      // 微信内直接复制链接，避免出现“选择联系人后无结果”的假成功体验。
+      if(inWeChat){await copyText(url,'链接已复制，可粘贴发送到微信群');return}
+      if(navigator.share){try{await navigator.share({title:document.title,url});return}catch(e){if(e.name==='AbortError')return}}
+      await copyText(url,'活动链接已复制，可粘贴分享');
+    });
     document.getElementById('calendarBtn').addEventListener('click',()=>{const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Longhua Reading Club//CN','BEGIN:VEVENT','UID:longhua-reading-20261121@reading.club','DTSTAMP:20261117T120000Z','DTSTART:20261121T070000Z','DTEND:20261121T080000Z','SUMMARY:龙华读书会｜君子爱财，取之有道','LOCATION:星巴克（龙华益田假日天地店）','DESCRIPTION:4–8人主题读书会，费用29.9元/人。无需提前阅读。','END:VEVENT','END:VCALENDAR'].join('\r\n');const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='龙华读书会-2026-11-21.ics';a.click();URL.revokeObjectURL(a.href);toast('日历文件已生成')});
 
     // 已报名成员的匿名展示，信息由活动主理人维护。
