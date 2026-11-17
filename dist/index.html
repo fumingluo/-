@@ -10,118 +10,83 @@
   <meta property="og:image" content="assets/cover-note.jpg">
   <title>君子爱财，取之有道｜龙华周六读书会</title>
   <style>
-    :root{--ink:#1d2924;--muted:#68736d;--paper:#f5f0e4;--cream:#fffaf0;--green:#173f35;--lime:#d6ed72;--yellow:#f8d744;--line:rgba(23,63,53,.14);--shadow:0 24px 70px rgba(30,54,44,.14)}
+    :root{
+      --ink:#173a32;--ink-2:#274f45;--paper:#f4efe5;--card:#fffaf2;--white:#fffdf8;
+      --gold:#c8962e;--gold-soft:#efdca5;--red:#d9533f;--sage:#dce6cf;--muted:#6e7771;
+      --line:rgba(23,58,50,.14);--shadow:0 24px 80px rgba(23,58,50,.14);--radius:28px;
+    }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;color:var(--ink);background:var(--paper);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-    button,a{font:inherit}
-    a{color:inherit}
-    .grain{position:fixed;inset:0;pointer-events:none;opacity:.09;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E")}
-    .wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}
-    .topbar{height:68px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em}
-    .brand-dot{width:14px;height:14px;border-radius:50%;background:var(--yellow);box-shadow:10px 0 0 var(--green)}
-    .share{border:1px solid var(--line);border-radius:999px;background:rgba(255,250,240,.7);padding:9px 16px;color:var(--green);cursor:pointer}
-    .hero{min-height:calc(100svh - 68px);display:grid;grid-template-columns:1.02fr .78fr;gap:clamp(42px,7vw,96px);align-items:center;padding:38px 0 88px;position:relative}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);font-weight:800;letter-spacing:.12em;font-size:14px;text-transform:uppercase}
-    .eyebrow:before{content:"";width:42px;height:2px;background:var(--yellow)}
-    h1{font-family:STKaiti,KaiTi,"楷体",serif;font-size:clamp(54px,7.2vw,104px);line-height:.98;margin:25px 0 26px;font-weight:900;letter-spacing:-.05em;color:var(--green)}
-    h1 em{font-style:normal;color:#c49113;display:block;margin-top:.14em}
-    .lead{font-size:clamp(18px,2vw,24px);max-width:620px;margin:0 0 32px;color:#45514b}
-    .event-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;max-width:680px}
-    .event-strip div{background:rgba(255,250,240,.76);padding:16px 18px}
-    .event-strip small{display:block;color:var(--muted);font-size:12px;letter-spacing:.08em;margin-bottom:2px}
-    .event-strip strong{display:block;font-size:16px;line-height:1.35}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .btn{border:0;border-radius:999px;padding:14px 24px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;font-weight:800;transition:.2s transform,.2s box-shadow}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:var(--green);color:white;box-shadow:0 12px 30px rgba(23,63,53,.2)}
-    .btn-secondary{background:transparent;border:1px solid var(--green);color:var(--green)}
-    .poster{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);transform:rotate(1.2deg);background:#c5b395}
-    .poster img,.photo-crop img,.qr-crop img{position:absolute;width:100%;height:auto;left:0;top:0}
-    .poster img{transform:translateY(-17.8%)}
-    .poster:after{content:"11.21 · 深圳龙华";position:absolute;right:18px;bottom:18px;background:var(--lime);color:var(--green);font-weight:900;padding:8px 14px;border-radius:999px;transform:rotate(-2deg)}
-    section{padding:100px 0}
-    .section-head{display:grid;grid-template-columns:.62fr 1.38fr;gap:50px;align-items:start;margin-bottom:48px}
-    .kicker{font-size:14px;font-weight:900;color:#9a7317;letter-spacing:.16em;text-transform:uppercase;margin:0 0 10px}
-    h2{font-family:STKaiti,KaiTi,"楷体",serif;font-size:clamp(38px,5vw,68px);line-height:1.08;color:var(--green);margin:0}
-    .section-intro{font-size:clamp(18px,2vw,24px);margin:14px 0 0;color:#47534d;max-width:720px}
-    .question-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-    .question{min-height:230px;padding:24px;border:1px solid var(--line);border-radius:22px;background:rgba(255,250,240,.72);display:flex;flex-direction:column;justify-content:space-between;transition:.2s transform,.2s background}
-    .question:hover{transform:translateY(-5px);background:var(--cream)}
-    .question .n{font-family:Georgia,serif;color:#b59235;font-size:15px}
-    .question h3{font-size:21px;line-height:1.5;margin:24px 0 0}
-    .question:nth-child(2){background:var(--green);color:white}.question:nth-child(4){background:var(--yellow)}
-    .format{background:var(--green);color:white;position:relative;overflow:hidden}
-    .format:before{content:"道";position:absolute;right:-.08em;top:-.25em;font:700 48vw/1 STKaiti,KaiTi,serif;color:rgba(255,255,255,.035)}
-    .format h2{color:white}.format .section-intro{color:#d7e1dc}
-    .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
-    .step{border-top:1px solid rgba(255,255,255,.27);padding:24px 6px 0}
-    .step span{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:var(--lime);color:var(--green);font-weight:900}
-    .step h3{font-size:24px;margin:18px 0 8px}.step p{color:#cad7d2;margin:0}
-    .fit-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
-    .fit-list{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:14px}
-    .fit-list li{padding:15px 18px 15px 52px;background:var(--cream);border-radius:14px;position:relative;border:1px solid var(--line)}
-    .fit-list li:before{content:"✓";position:absolute;left:18px;color:#237455;font-weight:900}
-    .photo-stack{display:grid;grid-template-columns:1fr 1fr;gap:16px;transform:rotate(-1deg)}
-    .photo-crop{position:relative;overflow:hidden;border:10px solid var(--cream);box-shadow:var(--shadow);aspect-ratio:4/5;background:#a8886d}
-    .photo-crop.discussion img{transform:translateY(-46%)}
-    .photo-crop.group{margin-top:46px}.photo-crop.group img{transform:translateY(-14%)}
-    .details{background:var(--cream)}
-    .detail-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:start}
-    .detail-list{border-top:1px solid var(--line);margin-top:34px}
-    .detail-row{display:grid;grid-template-columns:100px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
-    .detail-row dt{color:var(--muted)}.detail-row dd{margin:0;font-weight:800;font-size:18px}
-    .detail-row a{color:#176d50;text-underline-offset:4px}
-    .signup-card{background:var(--paper);padding:22px;border-radius:28px;position:sticky;top:24px;border:1px solid var(--line)}
-    .signup-card h3{font-size:28px;margin:0 0 6px}.signup-card p{margin:0 0 20px;color:var(--muted)}
-    .qr-crop{position:relative;overflow:hidden;aspect-ratio:3/4;border-radius:18px;background:white}.qr-crop img{transform:translateY(-10%)}
-    .copy-box{margin-top:16px;background:white;border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px dashed #9ca89f}
-    .copy-box code{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#51615a}
-    .mini{border:0;background:var(--green);color:white;border-radius:999px;padding:8px 13px;white-space:nowrap;cursor:pointer}
-    footer{background:#102e27;color:#b8c8c1;padding:46px 0 110px;text-align:center}
-    footer strong{color:white}
-    .sticky{display:none}
-    .toast{position:fixed;left:50%;bottom:95px;transform:translate(-50%,20px);opacity:0;background:#102e27;color:white;padding:11px 18px;border-radius:999px;z-index:50;transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
-    @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:22px}.poster{width:min(520px,100%);margin:auto}.question-grid{grid-template-columns:repeat(2,1fr)}.question:last-child{grid-column:1/-1;min-height:160px}.section-head,.fit-grid,.detail-layout{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.detail-layout{gap:36px}.signup-card{position:static}.section-head{gap:18px}.fit-grid{gap:46px}}
-    @media(max-width:620px){.wrap{width:min(100% - 28px,1120px)}.topbar{height:58px}.brand{font-size:14px}.share{padding:7px 13px}.hero{min-height:auto;padding-bottom:64px;gap:40px}h1{font-size:54px}.lead{font-size:18px}.event-strip{grid-template-columns:1fr}.event-strip div{display:grid;grid-template-columns:76px 1fr;align-items:center}.event-strip small{margin:0}.actions{display:grid;grid-template-columns:1fr 1fr}.btn{padding:13px 16px}.poster{border-radius:20px}section{padding:72px 0}.section-head{margin-bottom:32px}.question-grid{grid-template-columns:1fr}.question,.question:last-child{min-height:170px;grid-column:auto}.flow{gap:26px}.photo-stack{gap:8px}.photo-crop{border-width:6px}.detail-row{grid-template-columns:74px 1fr;gap:10px}.signup-card{padding:14px}.sticky{display:grid;grid-template-columns:1fr auto;gap:10px;position:fixed;z-index:30;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));background:rgba(255,250,240,.94);backdrop-filter:blur(14px);padding:9px;border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 40px rgba(20,42,34,.2);align-items:center}.sticky div{padding-left:7px;line-height:1.25}.sticky small{color:var(--muted);display:block}.sticky strong{font-size:15px}.sticky .btn{padding:11px 17px}footer{padding-bottom:130px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.question,.toast{transition:none}}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    button,a{font:inherit}button{color:inherit}a{color:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+    .grain{position:fixed;inset:0;pointer-events:none;opacity:.055;z-index:80;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitchTiles'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E")}
+    .topbar{height:78px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:8}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:850;letter-spacing:.08em}
+    .seal{display:grid;place-items:center;width:34px;height:34px;background:var(--red);color:#fff4e3;border-radius:9px;font:800 17px/1 STKaiti,KaiTi,serif;transform:rotate(-4deg);box-shadow:inset 0 0 0 2px rgba(255,255,255,.38)}
+    .top-actions{display:flex;align-items:center;gap:10px}.top-link,.share{border:1px solid var(--line);border-radius:999px;background:rgba(255,250,242,.65);padding:9px 16px;text-decoration:none;cursor:pointer;color:var(--ink);backdrop-filter:blur(12px)}
+    .top-link{border-color:transparent;background:transparent}.share:hover,.top-link:hover{border-color:var(--ink)}
+    .hero{min-height:calc(100svh - 78px);display:grid;grid-template-columns:1.06fr .76fr;gap:clamp(48px,7vw,104px);align-items:center;padding:46px 0 100px;position:relative}
+    .hero:before{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(200,150,46,.22);border-radius:50%;left:-330px;top:2%;box-shadow:0 0 0 70px rgba(200,150,46,.04),0 0 0 145px rgba(200,150,46,.025)}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:900;letter-spacing:.18em;color:#9b6d12;text-transform:uppercase}.eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
+    h1,h2{font-family:STKaiti,KaiTi,"楷体",serif;color:var(--ink);font-weight:900}
+    h1{font-size:clamp(60px,7.4vw,108px);line-height:.95;letter-spacing:-.055em;margin:25px 0 28px;position:relative}.title-sub{display:block;color:var(--gold);margin:.16em 0 0 .42em}.title-mark{display:inline-block;width:.58em;height:.58em;background:var(--red);border-radius:50%;margin-left:.12em;vertical-align:.1em;box-shadow:inset 0 0 0 5px rgba(255,255,255,.25)}
+    .lead{font-size:clamp(18px,2vw,23px);color:#485b54;max-width:650px;margin:0 0 34px}.lead strong{color:var(--ink)}
+    .meta-grid{display:grid;grid-template-columns:1.05fr 1.25fr .8fr;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(255,250,242,.62);max-width:720px;box-shadow:0 16px 50px rgba(23,58,50,.06)}
+    .meta{padding:17px 18px;border-right:1px solid var(--line)}.meta:last-child{border:0}.meta small{display:block;color:var(--muted);font-size:12px;letter-spacing:.1em;margin-bottom:3px}.meta strong{display:block;font-size:16px;line-height:1.4}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.btn{border:0;border-radius:999px;padding:14px 23px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;font-weight:850;transition:transform .22s,box-shadow .22s,background .22s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--ink);color:#fff;box-shadow:0 13px 32px rgba(23,58,50,.2)}.btn-primary:hover{background:var(--ink-2)}.btn-secondary{border:1px solid var(--ink);background:transparent}.btn-cream{background:var(--white);color:var(--ink)}
+    .seat-note{display:flex;align-items:center;gap:11px;margin-top:22px;color:var(--muted);font-size:13px}.seat-dots{display:flex}.seat-dots i{width:24px;height:24px;margin-left:-5px;border:2px solid var(--paper);border-radius:50%;background:linear-gradient(135deg,#b9cbb8,#6f9486)}.seat-dots i:nth-child(2){background:linear-gradient(135deg,#e7c675,#c18e28)}.seat-dots i:nth-child(3){background:linear-gradient(135deg,#e9a796,#bd5f4e)}.seat-dots i:first-child{margin-left:0}
+    .visual{position:relative;padding:28px 12px 18px}.visual:before{content:"";position:absolute;inset:5% -6% 2% 8%;background:var(--sage);border-radius:44% 56% 52% 48%/44% 38% 62% 56%;transform:rotate(-5deg)}
+    .poster{position:relative;border-radius:34px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);transform:rotate(1.5deg);background:#c5b395;border:10px solid var(--white);margin:0}.poster img{position:absolute;width:100%;height:auto;left:0;top:0;transform:translateY(-17.8%)}
+    .poster-stamp{position:absolute;right:-8px;bottom:8%;background:var(--red);color:white;padding:12px 18px;border-radius:12px;font-weight:900;line-height:1.25;transform:rotate(-5deg);box-shadow:0 15px 30px rgba(130,54,39,.25)}.poster-stamp small{display:block;font-size:11px;letter-spacing:.12em;opacity:.82}
+    .quote-chip{position:absolute;left:-32px;top:13%;background:var(--white);border:1px solid var(--line);padding:12px 16px;border-radius:18px;box-shadow:0 10px 35px rgba(23,58,50,.12);font-family:STKaiti,KaiTi,serif;font-weight:800;transform:rotate(-4deg);z-index:2}
+    .ticker{border-block:1px solid var(--line);background:rgba(255,250,242,.52);overflow:hidden}.ticker-track{display:flex;width:max-content;animation:ticker 28s linear infinite}.ticker span{padding:15px 24px;font-size:13px;font-weight:800;letter-spacing:.14em;color:#56645e}.ticker b{color:var(--gold);margin-left:48px}@keyframes ticker{to{transform:translateX(-50%)}}
+    section{padding:108px 0}.section-head{display:grid;grid-template-columns:.66fr 1.34fr;gap:60px;align-items:end;margin-bottom:48px}.kicker{font-size:12px;font-weight:900;color:#9b6d12;letter-spacing:.18em;text-transform:uppercase;margin:0 0 11px}.kicker:after{content:"";display:inline-block;width:34px;height:1px;background:currentColor;vertical-align:middle;margin-left:10px}h2{font-size:clamp(42px,5.4vw,72px);line-height:1.02;margin:0;letter-spacing:-.035em}.section-intro{font-size:clamp(18px,2vw,23px);margin:0;color:#526159;max-width:720px}
+    .question-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:15px}.question{grid-column:span 4;min-height:230px;padding:25px;border-radius:24px;background:rgba(255,250,242,.78);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;transition:transform .24s,box-shadow .24s}.question:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(23,58,50,.08)}.question .n{font:700 14px/1 Georgia,serif;color:#a77717}.question h3{font-size:21px;line-height:1.48;margin:28px 0 0}.question:nth-child(2){background:var(--ink);color:white;grid-column:span 5}.question:nth-child(3){grid-column:span 3;background:var(--gold-soft)}.question:nth-child(4){grid-column:span 5}.question:nth-child(5){grid-column:span 7;background:var(--sage)}
+    .format{background:var(--ink);color:white;position:relative;overflow:hidden}.format:before{content:"道";position:absolute;right:-.09em;top:-.19em;font:900 49vw/1 STKaiti,KaiTi,serif;color:rgba(255,255,255,.035)}.format .kicker{color:#efd37f}.format h2{color:white}.format .section-intro{color:#cad9d4}.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}.step{padding:26px;border:1px solid rgba(255,255,255,.15);border-radius:24px;background:rgba(255,255,255,.055);min-height:225px}.step span{display:grid;place-items:center;width:40px;height:40px;background:#f0cf73;color:var(--ink);border-radius:50%;font-weight:900}.step h3{font-size:24px;margin:24px 0 9px}.step p{margin:0;color:#c5d5cf}.step:nth-child(2){transform:translateY(24px)}
+    .community{display:grid;grid-template-columns:.86fr 1.14fr;gap:78px;align-items:center}.fit-list{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:13px}.fit-list li{padding:14px 18px 14px 50px;background:var(--card);border-radius:15px;position:relative;border:1px solid var(--line)}.fit-list li:before{content:"✓";position:absolute;left:18px;color:#2f7c61;font-weight:900}.photo-stack{display:grid;grid-template-columns:1fr 1fr;gap:16px;position:relative}.photo-crop{position:relative;overflow:hidden;border:9px solid var(--white);box-shadow:var(--shadow);aspect-ratio:4/5;background:#a8886d;border-radius:7px}.photo-crop img{position:absolute;width:100%;height:auto;left:0;top:0}.photo-crop.discussion{transform:rotate(-2.3deg)}.photo-crop.discussion img{transform:translateY(-46%)}.photo-crop.group{margin-top:52px;transform:rotate(2.2deg)}.photo-crop.group img{transform:translateY(-14%)}.photo-caption{position:absolute;right:23%;bottom:-18px;background:var(--red);color:white;padding:8px 14px;border-radius:9px;font-size:13px;font-weight:800;transform:rotate(-2deg)}
+    .details{background:var(--card);position:relative}.detail-layout{display:grid;grid-template-columns:1.02fr .98fr;gap:76px;align-items:start}.detail-list{border-top:1px solid var(--line);margin-top:34px}.detail-row{display:grid;grid-template-columns:90px 1fr;gap:24px;padding:21px 0;border-bottom:1px solid var(--line)}.detail-row dt{color:var(--muted)}.detail-row dd{margin:0;font-weight:800;font-size:17px}.map-links{display:flex;gap:9px;flex-wrap:wrap;margin-top:11px}.map-link{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:999px;text-decoration:none;font-size:13px;border:1px solid var(--line);background:white}.map-link:hover{border-color:var(--ink)}.map-dot{width:8px;height:8px;border-radius:50%;background:#2d74da}.map-link.amap .map-dot{background:#00a57a}
+    .signup-card{background:var(--paper);padding:18px;border-radius:32px;position:sticky;top:22px;border:1px solid var(--line);box-shadow:0 24px 70px rgba(23,58,50,.1)}.signup-top{padding:8px 9px 17px}.signup-card h3{font-size:30px;margin:0 0 5px}.signup-card p{margin:0;color:var(--muted)}.qr-wrap{position:relative;background:white;border:0;padding:0;width:100%;border-radius:22px;overflow:hidden;cursor:pointer}.qr-crop{display:block;position:relative;overflow:hidden;aspect-ratio:3/4;background:white}.qr-crop img{position:absolute;width:100%;height:auto;left:0;top:0;transform:translateY(-10%)}.qr-tip{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(23,58,50,.92);color:white;text-align:center;padding:11px;border-radius:14px;font-size:13px;font-weight:800;backdrop-filter:blur(10px)}
+    .signup-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.signup-actions .btn{padding:12px 14px;font-size:14px}.mini-card{margin-top:10px;background:var(--white);border:1px dashed #9ca89f;border-radius:16px;padding:13px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px}.mini-card div{min-width:0}.mini-card small{display:block;color:var(--muted)}.mini-card code{display:block;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#526159}.mini-copy{border:0;background:var(--ink);color:white;border-radius:999px;padding:8px 12px;white-space:nowrap;cursor:pointer;font-weight:800}
+    .live-card{margin-top:20px;padding:16px 17px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.55)}.live-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.live-head strong{font-size:14px}.live-status{font-size:12px;color:var(--muted)}.avatar-row{display:flex;align-items:center;margin-top:12px}.avatar-list{display:flex}.avatar{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;margin-left:-7px;border:2px solid var(--card);background:linear-gradient(135deg,#bdd0c4,#759787);color:white;font-size:12px;font-weight:900;overflow:hidden}.avatar:first-child{margin-left:0}.avatar img{width:100%;height:100%;object-fit:cover}.avatar-empty{background:transparent;border:1px dashed #9ea9a2;color:#87928c}.avatar-copy{font-size:12px;color:var(--muted);margin-left:11px}
+    footer{background:#102e27;color:#b8c8c1;padding:54px 0 122px;text-align:center}footer strong{color:white}.footer-seal{display:grid;place-items:center;margin:0 auto 15px;width:38px;height:38px;background:var(--red);color:white;border-radius:10px;font:800 18px/1 STKaiti,KaiTi,serif;transform:rotate(-4deg)}
+    .sticky{display:none}.toast{position:fixed;left:50%;bottom:104px;transform:translate(-50%,20px);opacity:0;background:#102e27;color:white;padding:11px 18px;border-radius:999px;z-index:110;transition:.25s;pointer-events:none;box-shadow:0 12px 35px rgba(0,0,0,.22)}.toast.show{opacity:1;transform:translate(-50%,0)}
+    .modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(12,34,28,.72);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:.25s}.modal.open{opacity:1;visibility:visible}.modal-card{width:min(430px,100%);background:var(--card);border-radius:28px;padding:18px;box-shadow:0 30px 100px rgba(0,0,0,.35);transform:translateY(20px) scale(.98);transition:.25s}.modal.open .modal-card{transform:none}.modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:4px 5px 14px}.modal-head h3{margin:0;font-size:24px}.modal-head p{margin:3px 0 0;color:var(--muted);font-size:14px}.modal-close{border:0;background:#e8e3d9;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:22px}.modal-qr{position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;background:white}.modal-qr img{position:absolute;width:100%;height:auto;left:0;top:0;transform:translateY(-10%)}.modal-note{background:var(--ink);color:white;margin-top:12px;border-radius:16px;padding:13px;text-align:center;font-size:14px;font-weight:800}
+    .flash{animation:flash 1.25s ease}@keyframes flash{0%,100%{box-shadow:0 24px 70px rgba(23,58,50,.1)}35%{box-shadow:0 0 0 8px rgba(217,83,63,.22),0 24px 70px rgba(23,58,50,.16)}}.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:940px){.hero{grid-template-columns:1fr;padding-top:30px}.visual{width:min(570px,100%);margin:auto}.section-head,.community,.detail-layout{grid-template-columns:1fr}.section-head{gap:20px;align-items:start}.question:nth-child(n){grid-column:span 6}.flow{grid-template-columns:1fr}.step:nth-child(2){transform:none}.community,.detail-layout{gap:54px}.signup-card{position:static}}
+    @media(max-width:640px){.wrap{width:min(100% - 28px,1160px)}.topbar{height:62px}.brand{font-size:14px}.seal{width:30px;height:30px}.top-link{display:none}.share{padding:7px 13px;font-size:13px}.hero{min-height:auto;padding:36px 0 68px;gap:38px}h1{font-size:57px}.title-sub{margin-left:.16em}.lead{font-size:17px}.meta-grid{grid-template-columns:1fr}.meta{border-right:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:74px 1fr;align-items:center}.meta small{margin:0}.actions{display:grid;grid-template-columns:1fr 1fr}.btn{padding:13px 14px}.visual{padding-inline:6px}.quote-chip{left:-4px;top:10%;font-size:13px}.poster-stamp{right:-3px}.poster{border-width:7px;border-radius:25px}.ticker span{padding:12px 18px}section{padding:76px 0}.section-head{margin-bottom:30px}.question-grid{grid-template-columns:1fr}.question:nth-child(n){grid-column:auto;min-height:170px}.question h3{font-size:19px}.community{gap:42px}.photo-stack{gap:8px}.photo-crop{border-width:5px}.detail-row{grid-template-columns:68px 1fr;gap:8px}.signup-card{padding:12px;border-radius:24px}.signup-actions{grid-template-columns:1fr}.live-card{margin-top:12px}.sticky{display:grid;grid-template-columns:1fr auto;gap:10px;position:fixed;z-index:70;left:10px;right:10px;bottom:calc(9px + env(safe-area-inset-bottom));background:rgba(255,250,242,.94);backdrop-filter:blur(16px);padding:8px 8px 8px 13px;border:1px solid var(--line);border-radius:20px;box-shadow:0 14px 46px rgba(20,42,34,.22);align-items:center}.sticky-copy{line-height:1.28;min-width:0}.sticky-copy small{color:var(--muted);display:block;font-size:11px}.sticky-copy strong{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sticky .btn{padding:11px 16px;font-size:14px}.toast{bottom:94px;max-width:calc(100% - 28px);white-space:nowrap}footer{padding-bottom:130px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}.btn,.toast,.modal,.modal-card,.reveal{transition:none}.reveal{opacity:1;transform:none}}
   </style>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
   <header class="wrap topbar">
-    <div class="brand"><span class="brand-dot"></span>龙华周六读书会</div>
-    <button class="share" id="shareBtn" type="button">分享活动</button>
+    <a class="brand" href="#top"><span class="seal">读</span><span>龙华周六读书会</span></a>
+    <div class="top-actions"><a class="top-link" href="#details">活动信息</a><a class="top-link" href="#organizer">报名咨询</a><button class="share" id="shareBtn" type="button">分享活动</button></div>
   </header>
-
-  <main>
+  <main id="top">
     <div class="wrap hero">
       <div>
-        <div class="eyebrow">周六 · 主题读书会</div>
-        <h1>君子爱财<em>取之有道</em></h1>
-        <p class="lead">从古人的智慧出发，聊聊财富、道义与人生选择。不是投资课，也不需要提前阅读——带着问题来，就好。</p>
-        <div class="event-strip" aria-label="活动概览">
-          <div><small>时间</small><strong>11.21 周六<br>15:00–16:00</strong></div>
-          <div><small>地点</small><strong>龙华益田<br>假日天地</strong></div>
-          <div><small>席位</small><strong>4–8 人<br>¥29.9 / 人</strong></div>
+        <div class="eyebrow">周六 · 主题共读与交流</div>
+        <h1>君子爱财<span class="title-sub">取之有道<span class="title-mark" aria-hidden="true"></span></span></h1>
+        <p class="lead">从古人的智慧出发，聊聊<strong>财富、道义与人生选择</strong>。不是投资课，也不需要提前阅读——带着问题来，就好。</p>
+        <div class="meta-grid" aria-label="活动概览">
+          <div class="meta"><small>DATE / TIME</small><strong>11.21 周六<br>15:00–16:00</strong></div>
+          <div class="meta"><small>LOCATION</small><strong>星巴克 · 龙华益田<br>假日天地店</strong></div>
+          <div class="meta"><small>GROUP</small><strong>4–8 人<br>¥29.9 / 人</strong></div>
         </div>
-        <div class="actions">
-          <a class="btn btn-primary" href="#signup">查看报名方式 ↓</a>
-          <button class="btn btn-secondary" id="calendarBtn" type="button">加入日历</button>
-        </div>
+        <div class="actions"><button class="btn btn-primary signupTrigger" type="button">立即报名 <span>↗</span></button><button class="btn btn-secondary" id="calendarBtn" type="button">加入日历</button></div>
+        <div class="seat-note"><span class="seat-dots" aria-hidden="true"><i></i><i></i><i></i></span><span id="heroRegistrationText">小组上限 8 人 · 实时报名人数以取伙为准</span></div>
       </div>
-      <figure class="poster" aria-label="活动主题海报">
-        <img src="assets/cover-note.jpg" alt="君子爱财，取之有道活动海报" width="1080" height="2400">
-      </figure>
+      <div class="visual" aria-label="活动主题海报">
+        <div class="quote-chip">钱是工具，还是答案？</div>
+        <figure class="poster"><img src="assets/cover-note.jpg" alt="君子爱财，取之有道活动海报" width="1080" height="2400"></figure>
+        <div class="poster-stamp"><small>SHENZHEN · LONGHUA</small>11 月 21 日</div>
+      </div>
     </div>
-
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>财富 <b>·</b> 道义 <b>·</b> 人性 <b>·</b> 智慧 <b>·</b> 人生 <b>·</b> 龙华周六读书会 <b>·</b></span><span>财富 <b>·</b> 道义 <b>·</b> 人性 <b>·</b> 智慧 <b>·</b> 人生 <b>·</b> 龙华周六读书会 <b>·</b></span></div></div>
     <section id="topics">
-      <div class="wrap">
-        <div class="section-head">
-          <div><p class="kicker">What we talk about</p><h2>这一小时，<br>聊什么？</h2></div>
-          <p class="section-intro">钱能带来自由，也可能成为束缚。我们不急着给答案，而是借古人的眼光，重新看见自己与财富的关系。</p>
-        </div>
+      <div class="wrap reveal">
+        <div class="section-head"><div><p class="kicker">What we talk about</p><h2>这一小时，<br>聊什么？</h2></div><p class="section-intro">钱能带来自由，也可能成为束缚。我们不急着给答案，而是借古人的眼光，重新看见自己与财富的关系。</p></div>
         <div class="question-grid">
           <article class="question"><span class="n">01 · 财富</span><h3>人为什么渴望金钱？财富真的能带来幸福吗？</h3></article>
           <article class="question"><span class="n">02 · 道义</span><h3>古人所说的“取之有道”，究竟指什么？</h3></article>
@@ -131,73 +96,57 @@
         </div>
       </div>
     </section>
-
     <section class="format">
-      <div class="wrap">
-        <div class="section-head">
-          <div><p class="kicker">How it works</p><h2>不是讲座，<br>是一场共谈。</h2></div>
-          <p class="section-intro">主讲人从经典、历史故事与生活案例切入，留出足够的空间，让每个人都能说出自己的观察。</p>
-        </div>
-        <div class="flow">
-          <article class="step"><span>1</span><h3>主题引入</h3><p>从“君子爱财，取之有道”展开，建立共同语境。</p></article>
-          <article class="step"><span>2</span><h3>案例共读</h3><p>把传统智慧放回真实生活，看看它如何回应当下。</p></article>
-          <article class="step"><span>3</span><h3>自由交流</h3><p>分享观点、提出问题，在不同答案里照见自己。</p></article>
-        </div>
+      <div class="wrap reveal">
+        <div class="section-head"><div><p class="kicker">How it works</p><h2>不是讲座，<br>是一场共谈。</h2></div><p class="section-intro">主理人从经典、历史故事与生活案例切入，留出足够空间，让每个人都能说出自己的观察。</p></div>
+        <div class="flow"><article class="step"><span>1</span><h3>主题引入</h3><p>从“君子爱财，取之有道”展开，建立共同语境。</p></article><article class="step"><span>2</span><h3>案例共读</h3><p>把传统智慧放回真实生活，看看它如何回应当下。</p></article><article class="step"><span>3</span><h3>自由交流</h3><p>分享观点、提出问题，在不同答案里照见自己。</p></article></div>
       </div>
     </section>
-
     <section>
-      <div class="wrap fit-grid">
-        <div>
-          <p class="kicker">Come as you are</p>
-          <h2>也许，<br>你会喜欢这里。</h2>
-          <ul class="fit-list">
-            <li>对传统文化、国学智慧感兴趣</li>
-            <li>喜欢思考财富与人生的关系</li>
-            <li>好奇古人如何看待金钱与道义</li>
-            <li>乐于阅读、思考和探索不同观点</li>
-            <li>想在周末认识一些有趣、爱思考的朋友</li>
-          </ul>
-        </div>
-        <div class="photo-stack" aria-label="往期活动照片">
-          <div class="photo-crop discussion"><img src="assets/discussion.jpg" alt="往期读书会交流现场" width="1080" height="2400" loading="lazy"></div>
-          <div class="photo-crop group"><img src="assets/group.jpg" alt="往期活动参与者合影" width="1080" height="2400" loading="lazy"></div>
-        </div>
+      <div class="wrap community reveal">
+        <div><p class="kicker">Come as you are</p><h2>在阅读里相遇，<br>在交流中看见。</h2><ul class="fit-list"><li>对传统文化、国学智慧感兴趣</li><li>喜欢思考财富与人生的关系</li><li>好奇古人如何看待金钱与道义</li><li>乐于阅读、思考和探索不同观点</li><li>想在周末认识一些爱思考的新朋友</li></ul></div>
+        <div class="photo-stack" aria-label="往期活动照片"><div class="photo-crop discussion"><img src="assets/discussion.jpg" alt="往期读书会交流现场" width="1080" height="2400" loading="lazy"></div><div class="photo-crop group"><img src="assets/group.jpg" alt="往期活动参与者合影" width="1080" height="2400" loading="lazy"></div><span class="photo-caption">往期现场 · 真诚交流</span></div>
       </div>
     </section>
-
-    <section class="details" id="signup">
-      <div class="wrap detail-layout">
+    <section class="details" id="details">
+      <div class="wrap detail-layout reveal">
         <div>
-          <p class="kicker">Event details</p>
-          <h2>留一个小时，<br>和有趣的灵魂碰个面。</h2>
+          <p class="kicker">Event details</p><h2>留一个小时，<br>和有趣的灵魂碰个面。</h2>
           <dl class="detail-list">
             <div class="detail-row"><dt>时间</dt><dd>2026 年 11 月 21 日（周六）<br>15:00–16:00</dd></div>
-            <div class="detail-row"><dt>地点</dt><dd>星巴克（龙华益田假日天地店）<br><a href="https://map.baidu.com/search/%E6%98%9F%E5%B7%B4%E5%85%8B%20%E9%BE%99%E5%8D%8E%E7%9B%8A%E7%94%B0%E5%81%87%E6%97%A5%E5%A4%A9%E5%9C%B0%E5%BA%97" target="_blank" rel="noopener">在百度地图中搜索 →</a></dd></div>
-            <div class="detail-row"><dt>人数</dt><dd>4–8 人小组</dd></div>
-            <div class="detail-row"><dt>费用</dt><dd>29.9 元 / 人（防鸽费）</dd></div>
-            <div class="detail-row"><dt>准备</dt><dd>无需提前阅读，没有专业门槛</dd></div>
+            <div class="detail-row"><dt>地点</dt><dd>星巴克（龙华益田假日天地店）<div class="map-links"><a class="map-link amap" href="https://uri.amap.com/search?keyword=%E6%98%9F%E5%B7%B4%E5%85%8B%EF%BC%88%E9%BE%99%E5%8D%8E%E7%9B%8A%E7%94%B0%E5%81%87%E6%97%A5%E5%A4%A9%E5%9C%B0%E5%BA%97%EF%BC%89&city=%E6%B7%B1%E5%9C%B3&view=map&src=longhua-reading-club&callnative=1" target="_blank" rel="noopener"><span class="map-dot"></span>高德地图</a><a class="map-link" href="https://map.baidu.com/search/%E6%98%9F%E5%B7%B4%E5%85%8B%20%E9%BE%99%E5%8D%8E%E7%9B%8A%E7%94%B0%E5%81%87%E6%97%A5%E5%A4%A9%E5%9C%B0%E5%BA%97" target="_blank" rel="noopener"><span class="map-dot"></span>百度地图</a></div></dd></div>
+            <div class="detail-row"><dt>人数</dt><dd>4–8 人小组</dd></div><div class="detail-row"><dt>费用</dt><dd>29.9 元 / 人（防鸽费）</dd></div><div class="detail-row"><dt>准备</dt><dd>无需提前阅读，没有专业门槛</dd></div>
           </dl>
+          <div class="live-card" aria-live="polite"><div class="live-head"><strong>报名动态</strong><span class="live-status" id="registrationStatus">人数以取伙小程序为准</span></div><div class="avatar-row"><div class="avatar-list" id="avatarList"><span class="avatar avatar-empty">+</span><span class="avatar avatar-empty">+</span><span class="avatar avatar-empty">+</span></div><span class="avatar-copy" id="registrationCopy">接入报名数据后，将在这里自动显示头像</span></div></div>
         </div>
-        <aside class="signup-card">
-          <h3>报名与咨询</h3>
-          <p>长按或截图识别二维码，添加主理人“秋”；也可以复制口令，在微信中打开取伙小程序报名。</p>
-          <div class="qr-crop"><img src="assets/wechat-qr.jpg" alt="活动主理人秋的微信二维码" width="1080" height="2400" loading="lazy"></div>
-          <div class="copy-box"><code id="miniPath">#小程序://取伙/1ZRiAKLWFeHUfzJ</code><button class="mini" id="copyBtn" type="button">复制口令</button></div>
+        <aside class="signup-card" id="organizer">
+          <div class="signup-top"><h3>报名与咨询</h3><p>点击二维码可放大。手机端长按二维码，添加主理人“秋”报名。</p></div>
+          <button class="qr-wrap" id="qrOpen" type="button" aria-label="放大主理人二维码"><span class="qr-crop"><img src="assets/wechat-qr.jpg" alt="活动主理人秋的微信二维码" width="1080" height="2400" loading="lazy"></span><span class="qr-tip">长按二维码 · 添加主理人报名</span></button>
+          <div class="signup-actions"><button class="btn btn-primary" id="qrButton" type="button">放大二维码</button><button class="btn btn-secondary" id="copyBtn" type="button">复制取伙口令</button></div>
+          <div class="mini-card"><div><small>取伙小程序口令</small><code id="miniPath">#小程序://取伙/1ZRiAKLWFeHUfzJ</code></div><button class="mini-copy" id="miniCopy" type="button">复制</button></div>
         </aside>
       </div>
     </section>
   </main>
-
-  <footer><div class="wrap"><strong>龙华周六读书会</strong><br>在阅读与交流中，发现不一样的世界。</div></footer>
-  <div class="sticky"><div><small>11.21 周六 · 龙华</small><strong>15:00–16:00 · 仅 4–8 席</strong></div><a class="btn btn-primary" href="#signup">立即报名</a></div>
+  <footer><div class="wrap"><span class="footer-seal">读</span><strong>龙华周六读书会</strong><br>在阅读与交流中，发现不一样的世界。</div></footer>
+  <div class="sticky"><div class="sticky-copy"><small id="stickyStatus">11.21 周六 · 龙华</small><strong id="stickyMain">4–8 人小组 · 报名人数以取伙为准</strong></div><button class="btn btn-primary signupTrigger" type="button">立即报名</button></div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal" id="qrModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true"><div class="modal-card"><div class="modal-head"><div><h3 id="modalTitle">添加主理人“秋”</h3><p>手机端长按二维码识别，发送“读书会”即可报名。</p></div><button class="modal-close" id="modalClose" type="button" aria-label="关闭">×</button></div><div class="modal-qr"><img src="assets/wechat-qr.jpg" alt="活动主理人秋的微信二维码" width="1080" height="2400"></div><div class="modal-note">长按二维码 → 添加主理人 → 备注“读书会”</div></div></div>
   <script>
-    const toast=(message)=>{const el=document.getElementById('toast');el.textContent=message;el.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove('show'),1800)};
-    const copyText=async(text)=>{try{await navigator.clipboard.writeText(text);toast('已复制，在微信中粘贴即可')}catch{const area=document.createElement('textarea');area.value=text;document.body.appendChild(area);area.select();document.execCommand('copy');area.remove();toast('已复制，在微信中粘贴即可')}};
-    document.getElementById('copyBtn').addEventListener('click',()=>copyText(document.getElementById('miniPath').textContent));
-    document.getElementById('shareBtn').addEventListener('click',async()=>{const data={title:document.title,text:'君子爱财，取之有道｜龙华周六读书会',url:location.href};if(navigator.share){try{await navigator.share(data)}catch(e){if(e.name!=='AbortError')copyText(location.href)}}else copyText(location.href)});
+    const MINI_PATH='#小程序://取伙/1ZRiAKLWFeHUfzJ';
+    const toast=(message)=>{const el=document.getElementById('toast');el.textContent=message;el.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove('show'),2200)};
+    const copyText=async(text,message='已复制，在微信中粘贴即可')=>{try{await navigator.clipboard.writeText(text);toast(message)}catch{const area=document.createElement('textarea');area.value=text;document.body.appendChild(area);area.select();document.execCommand('copy');area.remove();toast(message)}};
+    const modal=document.getElementById('qrModal');
+    const openSignup=()=>{const card=document.getElementById('organizer');card.scrollIntoView({behavior:'smooth',block:'center'});card.classList.remove('flash');void card.offsetWidth;card.classList.add('flash');setTimeout(()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('modalClose').focus()},520)};
+    const closeModal=()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''};
+    document.querySelectorAll('.signupTrigger').forEach(btn=>btn.addEventListener('click',openSignup));
+    document.getElementById('qrOpen').addEventListener('click',openSignup);document.getElementById('qrButton').addEventListener('click',openSignup);document.getElementById('modalClose').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal()});
+    document.getElementById('copyBtn').addEventListener('click',()=>copyText(MINI_PATH));document.getElementById('miniCopy').addEventListener('click',()=>copyText(MINI_PATH));
+    document.getElementById('shareBtn').addEventListener('click',async()=>{const data={title:document.title,text:'君子爱财，取之有道｜龙华周六读书会',url:location.href.split('#')[0]};if(navigator.share){try{await navigator.share(data)}catch(e){if(e.name!=='AbortError')copyText(data.url,'活动链接已复制')}}else copyText(data.url,'活动链接已复制')});
     document.getElementById('calendarBtn').addEventListener('click',()=>{const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Longhua Reading Club//CN','BEGIN:VEVENT','UID:longhua-reading-20261121@reading.club','DTSTAMP:20261117T120000Z','DTSTART:20261121T070000Z','DTEND:20261121T080000Z','SUMMARY:龙华读书会｜君子爱财，取之有道','LOCATION:星巴克（龙华益田假日天地店）','DESCRIPTION:4–8人主题读书会，费用29.9元/人。无需提前阅读。','END:VEVENT','END:VCALENDAR'].join('\r\n');const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='龙华读书会-2026-11-21.ics';a.click();URL.revokeObjectURL(a.href);toast('日历文件已生成')});
+    const renderRegistration=data=>{if(!data||!Number.isFinite(data.registered))return;const registered=Math.max(0,Math.min(data.capacity||8,data.registered));const capacity=data.capacity||8;document.getElementById('registrationStatus').textContent='已报名 '+registered+' / '+capacity+' 人';document.getElementById('registrationCopy').textContent=registered?'已有 '+registered+' 位朋友加入':'成为第一位报名的朋友';document.getElementById('heroRegistrationText').textContent='已报名 '+registered+' / '+capacity+' 人 · 小组交流';document.getElementById('stickyStatus').textContent='已报名 '+registered+' / '+capacity+' 人';document.getElementById('stickyMain').textContent=registered<capacity?'还剩 '+(capacity-registered)+' 个席位 · 点击报名':'名额已满 · 可咨询候补';const list=document.getElementById('avatarList');list.innerHTML='';(data.attendees||[]).slice(0,5).forEach(person=>{const item=document.createElement('span');item.className='avatar';item.title=person.name||'已报名';if(person.avatar){const img=document.createElement('img');img.src=person.avatar;img.alt=person.name||'已报名成员';item.appendChild(img)}else item.textContent=(person.name||'友').slice(0,1);list.appendChild(item)});if(!list.children.length){const item=document.createElement('span');item.className='avatar avatar-empty';item.textContent='+';list.appendChild(item)}};
+    const loadRegistration=async()=>{try{const response=await fetch('registration.json?t='+Date.now(),{cache:'no-store'});if(response.ok)renderRegistration(await response.json())}catch{}};loadRegistration();setInterval(loadRegistration,60000);
+    if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
   </script>
 </body>
 </html>
