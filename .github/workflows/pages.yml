@@ -23,7 +23,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      - name: Verify Bible Studio is included\n        run: |\n          test -s dist/index.html\n          test -s dist/Bible/index.html\n          echo 'Bible Studio exists in deploy artifact'\n      - uses: actions/upload-pages-artifact@v4
+      - name: Verify Bible Studio is included
+        run: |
+          test -s dist/index.html
+          test -s dist/Bible/index.html
+          echo 'Bible Studio exists in deploy artifact'
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
       - name: Deploy to GitHub Pages
