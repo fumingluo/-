@@ -23,6 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      # A new push creates a fresh workflow run with a single Pages artifact.
       - name: Verify Bible Studio is included
         run: |
           test -s dist/index.html
